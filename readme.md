@@ -16,6 +16,6 @@ This project demonstrates two creational design patterns implemented in Java:
 * **Single Responsibility Principle (SRP):** Isolated creation logic inside factory classes.
 
 ---
-## 🚀 How to Run
+##  How to Run
 1. Open the project in IntelliJ IDEA or VS Code.
 2. Run `Main.java` to see both patterns in action.
