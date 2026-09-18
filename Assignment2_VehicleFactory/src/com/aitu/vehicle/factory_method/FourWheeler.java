@@ -5,9 +5,4 @@ public class FourWheeler implements Vehicle {
     public void assemble() {
         System.out.println("Assembling a 4-wheel vehicle (Car)");
     }
-
-    @Override
-    public void drive() {
-        System.out.println("Driving the car.");
-    }
 }

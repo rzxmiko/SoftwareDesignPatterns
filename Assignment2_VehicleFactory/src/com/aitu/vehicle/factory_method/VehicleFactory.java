@@ -6,7 +6,6 @@ public abstract class VehicleFactory {
     public void deliverVehicle() {
         Vehicle vehicle = createVehicle();
         vehicle.assemble();
-        vehicle.drive();
         System.out.println("Vehicle ready for delivery!\n");
     }
 }
