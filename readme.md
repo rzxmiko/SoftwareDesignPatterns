@@ -1,14 +1,14 @@
 # Vehicle Factory System — Assignment #2
 ---
 
-## 📌 Project Overview
+##  Project Overview
 This project demonstrates two creational design patterns implemented in Java:
 1. **Part A — Factory Method:** Used to encapsulate the creation of individual vehicles (`TwoWheeler` and `FourWheeler`) without coupling the client code to concrete classes.
 2. **Part B — Abstract Factory:** Used to create families of related vehicle components (`Engine` and `SafetyFeature`) to ensure compatibility between parts (e.g., Bike Engine + Helmet, Car Engine + Seatbelt).
 
 ---
 
-## 🛠 Project Structure
+##  Project Structure
 src/main/java/com/aitu/vehicle/
 ├── factory_method/          # Part A: Factory Method Implementation
 │   ├── Vehicle.java         # Product Interface
