@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Assignment1_Builder/Assignment1_Builder.iml" filepath="$PROJECT_DIR$/Assignment1_Builder/Assignment1_Builder.iml" />
       <module fileurl="file://$PROJECT_DIR$/Assignment2_VehicleFactory/Assignment2_VehicleFactory.iml" filepath="$PROJECT_DIR$/Assignment2_VehicleFactory/Assignment2_VehicleFactory.iml" />
       <module fileurl="file://$PROJECT_DIR$/Assignment3_Bridge/Assignment3_Bridge.iml" filepath="$PROJECT_DIR$/Assignment3_Bridge/Assignment3_Bridge.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Assignment4_Facade/Assignment4_Facade.iml" filepath="$PROJECT_DIR$/Assignment4_Facade/Assignment4_Facade.iml" />
     </modules>
   </component>
 </project>
