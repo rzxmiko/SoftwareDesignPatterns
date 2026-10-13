@@ -42,15 +42,13 @@ src/
         └── TheaterLights.java
 ```
 
-*Note: The structure above is an example. Adjust the filenames and folders to match your actual project.*
-
 ## Clean Code Principles
 This project demonstrates the following principles:
-- **Meaningful Names** — methods clearly describe their purpose.
-- **Single Responsibility Principle** — the facade coordinates operations without implementing device logic.
-- **Principle of Least Knowledge** — the client interacts with the facade instead of managing every subsystem.
-- **Small, Focused Classes** — each subsystem has its own responsibility.
-- **Decoupling** — subsystem classes do not depend on the facade and can be used independently.
+- **Meaningful Names** — methods like `watchMovie()` and `endMovie()` show the goal, not the technical steps.
+- **Single Responsibility Principle** — the facade only calls the devices in the right order. The device logic stays in the device classes.
+- **Explicit Dependencies (Constructor Injection)** — the devices come through the constructor and are saved in final fields.
+- **Small, Focused Classes** — each device class is small and has one job.
+- **No Leaking of Subsystem Details** — the client gives only the movie title. The order of calls and the settings stay inside the facade.
 
 ## Advantages
 - Simplifies interaction with multiple devices.
@@ -59,8 +57,8 @@ This project demonstrates the following principles:
 
 ## Disadvantages
 - The facade may become too large if too many responsibilities are added.
-- An additional class is introduced.
 - The simplified interface may not expose every advanced subsystem feature.
+- The devices do not check their own state and the facade has no error handling. This is the next improvement.
 
 ## Author
 **Dilara Shamelova**  
