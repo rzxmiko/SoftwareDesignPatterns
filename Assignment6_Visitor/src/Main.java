@@ -1,13 +1,34 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println(String.format("Hello and welcome!"));
+import filesystem.Directory;
+import filesystem.File;
+import visitor.SearchVisitor;
+import visitor.SizeCalculatorVisitor;
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+public class Main {
+    public static void main(String[] args) {
+        Directory root = new Directory("root");
+
+        Directory src = new Directory("src");
+        src.addElement(new File("Main.java", 1500));
+        src.addElement(new File("Utils.java", 800));
+
+        Directory docs = new Directory("docs");
+        docs.addElement(new File("report.pdf", 45000));
+        docs.addElement(new File("notes.txt", 300));
+
+        root.addElement(src);
+        root.addElement(docs);
+        root.addElement(new File(".gitignore", 120));
+
+        SizeCalculatorVisitor sizeVisitor = new SizeCalculatorVisitor();
+        root.accept(sizeVisitor);
+        System.out.println("Total file system size: " + sizeVisitor.getTotalSize() + " bytes");
+
+        SearchVisitor searchVisitor = new SearchVisitor(".java");
+        root.accept(searchVisitor);
+
+        System.out.println("\nFiles found with extension '.java':");
+        for (File f : searchVisitor.getMatchedFiles()) {
+            System.out.println(" - " + f.getName() + " (" + f.getSizeBytes() + " bytes)");
+        }
     }
 }
