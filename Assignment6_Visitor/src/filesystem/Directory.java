@@ -2,11 +2,12 @@ package filesystem;
 
 import visitor.Visitor;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Directory implements FileSystemElement {
-    private String name;
-    private List<FileSystemElement> children = new ArrayList<>();
+    private final String name;
+    private final List<FileSystemElement> children = new ArrayList<>();
 
     public Directory(String name) {
         this.name = name;
@@ -22,7 +23,7 @@ public class Directory implements FileSystemElement {
 
     @Override
     public List<FileSystemElement> getChildren() {
-        return children;
+        return Collections.unmodifiableList(children);
     }
 
     @Override

@@ -1,6 +1,7 @@
 import filesystem.Directory;
 import filesystem.File;
 import filesystem.FsWalker;
+import visitor.FileCountVisitor;
 import visitor.SearchVisitor;
 import visitor.SizeCalculatorVisitor;
 
@@ -31,5 +32,9 @@ public class Main {
         for (File f : searchVisitor.getMatchedFiles()) {
             System.out.println(" - " + f.getName() + " (" + f.getSizeBytes() + " bytes)");
         }
+
+        FileCountVisitor countVisitor = new FileCountVisitor();
+        FsWalker.walk(root, countVisitor);
+        System.out.println("\nTotal number of files: " + countVisitor.getCount());
     }
 }

@@ -6,8 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchVisitor implements Visitor {
-    private String extension;
-    private List<File> matchedFiles = new ArrayList<>();
+    private final String extension;
+    private final List<File> matchedFiles = new ArrayList<>();
 
     public SearchVisitor(String extension) {
         this.extension = extension;

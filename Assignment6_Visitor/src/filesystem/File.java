@@ -3,8 +3,8 @@ package filesystem;
 import visitor.Visitor;
 
 public class File implements FileSystemElement {
-    private String name;
-    private long sizeBytes;
+    private final String name;
+    private final long sizeBytes;
 
     public File(String name, long sizeBytes) {
         this.name = name;
