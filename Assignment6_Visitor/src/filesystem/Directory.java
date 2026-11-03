@@ -20,6 +20,7 @@ public class Directory implements FileSystemElement {
         children.add(element);
     }
 
+    @Override
     public List<FileSystemElement> getChildren() {
         return children;
     }
@@ -27,8 +28,5 @@ public class Directory implements FileSystemElement {
     @Override
     public void accept(Visitor visitor) {
         visitor.visitDirectory(this);
-        for (FileSystemElement element : children) {
-            element.accept(visitor);
-        }
     }
 }

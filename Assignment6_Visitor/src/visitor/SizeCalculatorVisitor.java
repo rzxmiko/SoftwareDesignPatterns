@@ -8,7 +8,7 @@ public class SizeCalculatorVisitor implements Visitor {
 
     @Override
     public void visitFile(File file) {
-        totalSize += file.getSizeBytes();
+        totalSize = Math.addExact(totalSize, file.getSizeBytes());
     }
 
     @Override

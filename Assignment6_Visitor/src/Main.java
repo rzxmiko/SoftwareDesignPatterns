@@ -1,5 +1,6 @@
 import filesystem.Directory;
 import filesystem.File;
+import filesystem.FsWalker;
 import visitor.SearchVisitor;
 import visitor.SizeCalculatorVisitor;
 
@@ -20,11 +21,11 @@ public class Main {
         root.addElement(new File(".gitignore", 120));
 
         SizeCalculatorVisitor sizeVisitor = new SizeCalculatorVisitor();
-        root.accept(sizeVisitor);
+        FsWalker.walk(root, sizeVisitor);
         System.out.println("Total file system size: " + sizeVisitor.getTotalSize() + " bytes");
 
         SearchVisitor searchVisitor = new SearchVisitor(".java");
-        root.accept(searchVisitor);
+        FsWalker.walk(root, searchVisitor);
 
         System.out.println("\nFiles found with extension '.java':");
         for (File f : searchVisitor.getMatchedFiles()) {

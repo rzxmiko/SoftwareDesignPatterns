@@ -25,6 +25,6 @@ public class SearchVisitor implements Visitor {
     }
 
     public List<File> getMatchedFiles() {
-        return matchedFiles;
+        return List.copyOf(matchedFiles);
     }
 }
